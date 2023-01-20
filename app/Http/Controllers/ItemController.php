@@ -87,12 +87,13 @@ class ItemController extends Controller
      */
     public function destroy($id)
     {
-        var_dump('э');
-        exit();
-        $item = Item::find($id);
-        $item->tags->sync([]);
+        Item::destroy($id);
+        return redirect()->route('items.index')->with('success', 'Элемент удален');
 
-        $item->delete();
+    }
+    public function show($id)
+    {
+        Item::destroy($id);
         return redirect()->route('items.index')->with('success', 'Элемент удален');
     }
 }

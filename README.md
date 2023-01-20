@@ -4,8 +4,9 @@
 
 ### При развороте:
 
-Создаём дубликат **include/app_config.default.php** с именем **app_config.php**
-Создаём дубликат **include/db_config.default.php** с именем **db_config.php**
+1. `cp .env.example .env`
+2. указать настроки подключения к БД для механизма миграций в файле .env
+
 
 ### Параметры сервера:
 *  PHP 7.4
@@ -14,10 +15,11 @@
 ### сборка:
 *  `composer install`
 
-### Сборка через Docker
+### Сборка через Docker sail
 
 1. `cp .env.example .env`
-2. указать настроки подключения к БД для механизма миграций в файле
+2. `./vendor/bin/sail up` - Запуск приложения
+3. `./vendor/bin/sail stop` - Остановить приложения
 
 ### Управление
 

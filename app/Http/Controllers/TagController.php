@@ -85,10 +85,4 @@ class TagController extends Controller
         Tag::destroy($id);
         return redirect()->route('tags.index')->with('success', 'Тег удален');
     }
-    public function show(Request $request)
-    {
-        var_dump($request);
-        exit();
-        return redirect()->route('tags.index')->with('success', 'Тег удален');
-    }
 }
